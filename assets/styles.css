@@ -609,3 +609,15 @@ footer a { color: var(--text-dim); }
 
 .looks__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 700px) { .looks__grid { grid-template-columns: 1fr; } }
+
+/* ---------- Схемы укладок ---------- */
+
+.shot { margin: 0 0 22px; }
+.shot a { display: block; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.shot a:hover { border-color: var(--accent); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption {
+  margin-top: 9px;
+  font-size: 13.5px;
+  color: var(--text-mute);
+}
