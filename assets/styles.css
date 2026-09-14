@@ -555,3 +555,57 @@ footer a { color: var(--text-dim); }
   body { background: #fff; color: #000; }
   section { break-inside: avoid; }
 }
+
+/* ---------- Готовые образы ---------- */
+
+.look { position: relative; padding-top: 20px; }
+
+.look__no {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.look h3 { margin: 0 0 2px; padding-right: 44px; }
+.look__sub { color: var(--text-dim); font-size: 15px; margin: 0 0 12px; }
+.look__kit { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+
+.look__steps { counter-reset: lk; list-style: none; padding: 0; margin: 0 0 14px; }
+.look__steps li {
+  counter-increment: lk;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.look__steps li::before {
+  content: counter(lk);
+  position: absolute; left: 0; top: 1px;
+  width: 21px; height: 21px; border-radius: 50%;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  font-family: var(--mono); font-size: 12px;
+  display: grid; place-items: center;
+}
+
+.look__src {
+  font-size: 13.5px;
+  color: var(--text-mute);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 11px;
+  margin: 0;
+}
+.look__src b { color: var(--text-dim); }
+
+.looks__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .looks__grid { grid-template-columns: 1fr; } }
