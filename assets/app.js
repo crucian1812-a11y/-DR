@@ -21,10 +21,15 @@
 
   function applyTheme(name) {
     doc.documentElement.setAttribute('data-theme', name);
-    if (themeBtn) themeBtn.textContent = name === 'light' ? '🌙 Тёмная' : '☀️ Светлая';
+    if (themeBtn) {
+      themeBtn.innerHTML = name === 'dark'
+        ? '☀️<span class="icon-btn__label">Дневная</span>'
+        : '🌙<span class="icon-btn__label">Вечерняя</span>';
+      themeBtn.setAttribute('aria-label', name === 'dark' ? 'Включить дневную тему' : 'Включить вечернюю тему');
+    }
   }
 
-  applyTheme(readStore(THEME_KEY) === 'light' ? 'light' : 'dark');
+  applyTheme(readStore(THEME_KEY) === 'dark' ? 'dark' : 'light');
 
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
